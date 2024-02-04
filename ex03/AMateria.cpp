@@ -5,15 +5,13 @@ AMateria::AMateria()
 	std::cout << "AMateria default constructor called" << std::endl;
 }
 
-AMateria::AMateria(std::string const &type)
+AMateria::AMateria(std::string const &type) : type(type)
 {
-	this->type = type;
 	std::cout << "AMateria " << type << " constructor called" << std::endl;
 }
 
-AMateria::AMateria(const AMateria &obj)
+AMateria::AMateria(const AMateria &obj) : type(obj.type)
 {
-	this->type = obj.type;
 	std::cout << "AMateria copy constructor called" << std::endl;
 }
 
@@ -24,14 +22,11 @@ AMateria::~AMateria()
 
 AMateria& AMateria::operator=(const AMateria &obj)
 {
-	if (this != &obj)
-	{
-		this->type = obj.type;
-	}
+	std::cout << "assigning from " << obj.getType() << std::endl;
 	return *this;
 }
 
-std::string const AMateria::&getType() const
+std::string const &AMateria::getType() const
 {
 	return this->type;
 }

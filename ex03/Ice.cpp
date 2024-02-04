@@ -1,13 +1,12 @@
 #include "Ice.hpp"
 
-Ice::Ice() : type("Ice")
+Ice::Ice() : AMateria("ice")
 {
 	std::cout << "Ice default constructor called" << std::endl;
 }
 
-Ice::Ice(const Ice &obj) : AMateria()
+Ice::Ice(const Ice &obj) : AMateria(obj.getType())
 {
-	this->type = obj.type;
 	std::cout << "Ice copy constructor called" << std::endl;
 }
 
@@ -20,11 +19,6 @@ Ice& Ice::operator=(const Ice &obj)
 {
 	std::cout << "assigning from " << obj.getType() << std::endl;
 	return *this;
-}
-
-std::string const Ice::&getType() const
-{
-	return this->type;
 }
 
 Ice* Ice::clone() const
