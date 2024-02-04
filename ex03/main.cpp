@@ -14,10 +14,8 @@ int main()
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
 	tmp_ice = src->createMateria("ice");
-	std::cout << "in tmp_ice : " << tmp_ice << std::endl;
 	me->equip(tmp_ice);
 	tmp_cure = src->createMateria("cure");
-	std::cout << "in tmp_cure : " << tmp_cure << std::endl;
 	me->equip(tmp_cure);
 	me->use(0, *bob);
 	me->use(1, *bob);
